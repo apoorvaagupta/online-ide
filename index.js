@@ -3,5 +3,11 @@
  */
 
 $(document).ready(() => {
+  const $sourceCode = $('#sourceCode');
+  const $runBtn = $('#runBtn');
 
+
+  $runBtn.click(() => {
+    console.log(eval($sourceCode.val()))
+  })
 })
