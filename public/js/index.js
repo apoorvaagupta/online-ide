@@ -11,7 +11,9 @@ console = {};
 $(document).ready(() => {
   const $sourceCode = $('#sourceCode');
   const $runBtn = $('#runBtn');
+  const $resetBtn = $('#resetBtn');
   const $outputDiv = $('#outputDiv');
+
   $outputDiv.hide();
 
   console.log = function (input) {
@@ -33,5 +35,9 @@ $(document).ready(() => {
     }
 
   });
+
+  $resetBtn.click(() => {
+    $sourceCode.val('')
+  })
 
 })
