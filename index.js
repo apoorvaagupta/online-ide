@@ -9,5 +9,6 @@ $(document).ready(() => {
 
   $runBtn.click(() => {
     console.log(eval($sourceCode.val()))
-  })
+  });
+
 })
