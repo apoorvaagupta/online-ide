@@ -8,7 +8,10 @@ $(document).ready(() => {
 
 
   $runBtn.click(() => {
-    console.log(eval($sourceCode.val()))
+    // console.log(eval($sourceCode.val()))
+    $.post('/test', {sourceCode: $sourceCode.val()}, (data) => {
+      console.log(data);
+    })
   });
 
 })
