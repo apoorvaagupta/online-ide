@@ -19,6 +19,9 @@ app.post("/test", (req, res) => {
   //   console.log(stderr)
   //   res.send("Hello");
   // })
+  if (code.stderr) {
+    return res.send(code.stderr);
+  }
 
   console.log(code)
   console.log(code.code)
