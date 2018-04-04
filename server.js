@@ -13,20 +13,14 @@ app.use(express.urlencoded({extended: true}))
 app.post("/test", (req, res) => {
   fs.writeFileSync("test.js", req.body.sourceCode);
   let code = shell.exec("node test.js", {silent: true})
-  // , (code, stdout, stderr) => {
-  //   console.log(code)
-  //   console.log(stdout)
-  //   console.log(stderr)
-  //   res.send("Hello");
-  // })
   if (code.stderr) {
     return res.send(code.stderr);
   }
 
-  console.log(code)
-  console.log(code.code)
-  console.log(code.stdout)
-  console.log(code.stderr)
+  // console.log(code)
+  // console.log(code.code)
+  // console.log(code.stdout)
+  // console.log(code.stderr)
   res.send(code.stdout);
 })
 

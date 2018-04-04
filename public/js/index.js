@@ -3,7 +3,6 @@
  */
 
 var console2 = console;
-console2.log = console.log;
 
 console = {};
 
@@ -16,12 +15,15 @@ $(document).ready(() => {
 
   $outputDiv.hide();
 
+  $('input[name="language"]').change(() => {
+    $outputDiv.empty().hide();
+  })
+
   console.log = function (input) {
     $outputDiv.show().append(input.toString());
   }
 
   $runBtn.click(() => {
-    // console.log(eval($sourceCode.val()))
     let lang = $('input[name="language"]:checked').val();
     if (lang === 'node') {
       $.post('/test', {sourceCode: $sourceCode.val()}, (data) => {
@@ -33,7 +35,6 @@ $(document).ready(() => {
       console2.log(2);
       eval($sourceCode.val())
     }
-
   });
 
   $resetBtn.click(() => {
