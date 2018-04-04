@@ -3,25 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <title>Online IDE</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/index.css">
+
   <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/bootstrap.js"></script>
   <script src="js/index.js"></script>
 </head>
-<body>
-<span>Select Language: </span>
-<input type="radio" name="language" value="node">NodeJS
-<input type="radio" name="language" value="js">Javascript
-<p>Input Source Code: </p>
-<textarea style="padding: 5px;" id="sourceCode" rows="20" cols="50">
+<body style="background-color: black">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1 class="text-center">
+        Online IDE
+      </h1>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col-sm-12">
+      <div>Select Language:</div>
+      <div class="form-check form-check-inline">
+        <input id="nodelangRadio" class="form-check-input" type="radio" name="language" value="node">
+        <label for="nodelangRadio" class="form-check-label">NodeJS</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input id="jslangRadio" class="form-check-input" type="radio" name="language" value="js">
+        <label for="jslangRadio" class="form-check-label">Javascript</label>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label for="sourceCode">Input Source Code: </label>
+        <textarea id="sourceCode" class="form-control" rows="10"></textarea>
+      </div>
+    </div>
+  </div>
 
-</textarea>
-<br/>
-<button id="runBtn">Run</button>
-<button id="resetBtn">Reset</button>
-
-<p>Output:</p>
-<div id="outputDiv"
-     style="width: 60vw; padding: 5px;border: 1px solid #AAAAAA; background-color: whitesmoke">
-
+  <div class="row">
+    <div class="col-sm-12">
+      <button id="runBtn" class="btn btn-success">Run</button>
+      <button id="resetBtn" class="btn btn-danger">Reset</button>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label for="outputDiv">Output: </label>
+        <div id="outputDiv" class="form-control"></div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!--<input type="radio" name="language" value="node">-->
+<!--<input type="radio" name="language" value="js">-->
+
+
+<!--<div id="outputDiv"-->
+<!--style="width: 60vw; padding: 5px;border: 1px solid #AAAAAA; background-color: whitesmoke">-->
+
+<!--</div>-->
 </body>
 </html>
