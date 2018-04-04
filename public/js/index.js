@@ -30,8 +30,12 @@ $(document).ready(() => {
         console.log(data)
         $('#outputDiv').show().empty().append(data);
       })
-    }
-    else if (lang === 'js') {
+    } else if (lang === 'py3') {
+      $.post('/test2', {sourceCode: $sourceCode.val()}, (data) => {
+        console.log(data)
+        $('#outputDiv').show().empty().append(data);
+      })
+    } else if (lang === 'js') {
       console2.log(2);
       eval($sourceCode.val())
     }
