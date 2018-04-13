@@ -17,10 +17,6 @@ app.post("/test", (req, res) => {
     return res.send(code.stderr);
   }
 
-  // console.log(code)
-  // console.log(code.code)
-  // console.log(code.stdout)
-  // console.log(code.stderr)
   res.send(code.stdout);
 })
 
@@ -31,10 +27,6 @@ app.post("/test2", (req, res) => {
     return res.send(code.stderr);
   }
 
-  // console.log(code)
-  // console.log(code.code)
-  // console.log(code.stdout)
-  // console.log(code.stderr)
   res.send(code.stdout);
 })
 
