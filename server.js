@@ -10,25 +10,7 @@ const fs = require('fs');
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
-app.post("/test", (req, res) => {
-  fs.writeFileSync("test.js", req.body.sourceCode);
-  let code = shell.exec("node test.js", {silent: true})
-  if (code.stderr) {
-    return res.send(code.stderr);
-  }
-
-  res.send(code.stdout);
-})
-
-app.post("/test2", (req, res) => {
-  fs.writeFileSync("test.py", req.body.sourceCode);
-  let code = shell.exec("python3 test.py", {silent: true})
-  if (code.stderr) {
-    return res.send(code.stderr);
-  }
-
-  res.send(code.stdout);
-})
+app.use('/api', require('./routes'));
 
 app.use(express.static(__dirname + '/public'));
 
