@@ -6,7 +6,7 @@ const route = express.Router();
 const shell = require('shelljs');
 const fs = require('fs');
 
-route.post("/test2", (req, res) => {
+route.post("/run", (req, res) => {
   fs.writeFileSync("test.py", req.body.sourceCode);
   let code = shell.exec("python3 test.py", {silent: true})
   if (code.stderr) {
