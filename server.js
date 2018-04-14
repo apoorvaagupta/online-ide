@@ -4,8 +4,6 @@
 
 const express = require('express');
 const app = express();
-const shell = require('shelljs');
-const fs = require('fs');
 
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
