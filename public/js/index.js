@@ -26,12 +26,12 @@ $(document).ready(() => {
   $runBtn.click(() => {
     let lang = $('input[name="language"]:checked').val();
     if (lang === 'node') {
-      $.post('/test', {sourceCode: $sourceCode.val()}, (data) => {
+      $.post('/api/node/run', {sourceCode: $sourceCode.val()}, (data) => {
         console.log(data)
         $('#outputDiv').show().empty().append(data);
       })
     } else if (lang === 'py3') {
-      $.post('/test2', {sourceCode: $sourceCode.val()}, (data) => {
+      $.post('/api/python3/run', {sourceCode: $sourceCode.val()}, (data) => {
         console.log(data)
         $('#outputDiv').show().empty().append(data);
       })
